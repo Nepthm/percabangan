@@ -3,6 +3,7 @@ package com.example.percabangan;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,20 +20,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void cb(View view){
-        CheckBox cb_1 = findViewById(R.id.cb_HOK);
-        CheckBox cb_2 = findViewById(R.id.cb_ML);
-        String game_terbaik = "";
-        if(cb_1.isChecked()){
-            game_terbaik = cb_1.getText().toString();
+    public void rb(View view){
+        RadioButton rb_1 = findViewById(R.id.radioButton);
+        RadioButton rb_2 = findViewById(R.id.radioButton2);
+        if (rb_1.isChecked()){
+            Toast.makeText(this, rb_1.getText().toString(), Toast.LENGTH_SHORT).show();
+        }else if(rb_2.isChecked()){
+            Toast.makeText(this, rb_2.getText().toString(), Toast.LENGTH_SHORT).show();
         }
-        if(cb_2.isChecked()){
-            game_terbaik = cb_2.getText().toString();
-        }
-        if (cb_1.isChecked() && cb_2.isChecked()){
-            game_terbaik = cb_1.getText().toString()+ " dan " + cb_2.getText().toString();
-        }
-
-        Toast.makeText(this, game_terbaik  , Toast.LENGTH_SHORT).show();
     }
+
+
 }
